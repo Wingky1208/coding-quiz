@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <p>Time: <span id="time">0</span></p>
+        <button class="scoreButton" id="scoreButton">Show Highscore</button>
+
+    </header>
+
+    <!-- intro area -->
+    <div class="info-box" id="intro">
+        <div class="info-title">
+            <h3>Welcome to the Javascript Quiz!</h3>
+            <p>Here are some rules of the Quiz:</p>
+        </div>
+        <div class="info-list">
+            <ul>
+                <li class="info">1. You will have 50 seconds to answer the questions.</li>
+                <li class="info">2. Once you select your answer, you cannot reselect.</li>
+                <li class="info">3. The time is subtracted if your answer is incorrect.</li>
+                <li class="info">4. Once the timer reaches 0 or all questions are answered, game over.</li>
+                <li class="info">5. You can save your inititals and score.</li>
+            </ul>
+        </div>
+        <div class="buttons">
+
+
+            <button class="restart" id="start-btn">Start Quiz</button>
+
+        </div>
+    </div>
+    <!-- question area -->
+    <div class="info-box hidden" id="questions-container">
+        <h3 id="question"></h3>
+
+        <div class="options">
+            <button id="optionA" type="button" class="btn btn-primary" onclick="checkAnswer(event)"></button>
+            <button id="optionB" type="button" class="btn btn-primary" onclick="checkAnswer(event)"></button>
+            <button id="optionC" type="button" class="btn btn-primary" onclick="checkAnswer(event)"></button>
+            <button id="optionD" type="button" class="btn btn-primary" onclick="checkAnswer(event)"></button>
+        </div>
+
+        <hr />
+        <div id="comments" class="comments">
+
+        </div>
+    </div>
+
+    <!-- reslut area -->
+    <div class="info-box hidden" id="end-container">
+        <div id="Results" class="input-group mb-3">
+            <h2 id="resultComment"></h2>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="score">@</span>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Your initial</span>
+                <input id="initial" type="text" data-index="" class="form-control" placeholder="Your initial">
+            </div>
+        </div>
+        <button id="saveResult">Save</button>
+    </div>
+
+    </div>
+
+    <!-- high score area -->
+    <div class="info-box hidden" id="score-container">
+
+        <div id="showHighscore">
+            <h2>Highscores</h2>
+            <ul id="scoreList" class="list-group"></ul>
+
+        </div>
+        <button id="goBack">Go Back</button>
+        <button id="clearHighscore">Clear Highscore</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
